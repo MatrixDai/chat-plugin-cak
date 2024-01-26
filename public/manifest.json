@@ -1,0 +1,32 @@
+{
+  "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
+  "api": [
+    {
+      "url": "http://131.186.28.213:7878/api/cak",
+      "name": "findCodeForMe",
+      "description": "Find the source code relevant to the question",
+      "parameters": {
+        "properties": {
+          "question": {
+            "description": "User's question about the source code",
+            "type": "string"
+          }
+        },
+        "required": ["question"],
+        "type": "object"
+      }
+    }
+  ],
+  "author": "LobeHub",
+  "createdAt": "2024-01-26",
+  "gateway": "http://131.186.28.213:7878/api/gateway",
+  "homepage": "https://github.com/todo",
+  "identifier": "code-as-knowlege",
+  "meta": {
+    "avatar": "🍓",
+    "tags": ["code", "knowledge"],
+    "title": "Ask code as knowledge",
+    "description": "This is the plugin for code as knowledge"
+  },
+  "version": "1"
+}
