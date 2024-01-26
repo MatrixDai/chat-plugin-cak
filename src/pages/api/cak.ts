@@ -5,6 +5,9 @@ import { OpenAI} from 'openai';
 
 export const config = {
   runtime: 'edge',
+  unstable_allowDynamic: [
+    '/node_modules/ajv/**',
+  ],
 };
 
 const index_name = 'lithium-documents';
