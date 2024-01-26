@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
   "api": [
     {
-      "url": "http://131.186.28.213:7878/api/cak",
+      "url": "http://chat-plugin-cak.vercel.app/api/cak",
       "name": "findCodeForMe",
       "description": "Find the source code relevant to the question",
       "parameters": {
@@ -19,8 +19,8 @@
   ],
   "author": "LobeHub",
   "createdAt": "2024-01-26",
-  "gateway": "http://131.186.28.213:7878/api/gateway",
-  "homepage": "https://github.com/todo",
+  "gateway": "http://chat-plugin-cak.vercel.app/api/gateway",
+  "homepage": "https://github.com/MatrixDai/chat-plugin-cak",
   "identifier": "code-as-knowlege",
   "meta": {
     "avatar": "🍓",
