@@ -22,7 +22,7 @@ export default async (req: Request) => {
   const openai = new OpenAI();
   const embedding = await openai.embeddings.create({input: question, model: 'text-embedding-3-small'});
 
-  const pc = new Pinecone({apiKey: process.env.PINECONE_API_KEY});
+  const pc = new Pinecone({apiKey: process.env.PINECONE_API_KEY || ''});
   const result = await pc.index(index_name).namespace(namespace).query({ includeMetadata: true, topK: 10, vector: embedding.data[0].embedding});
 
   const response =  result['matches'].map((match) => {
