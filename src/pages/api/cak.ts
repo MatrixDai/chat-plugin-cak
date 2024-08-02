@@ -19,12 +19,10 @@ export default async (req: Request) => {
   const { question } = (await req.json()) as QuestionData;
   console.log(question);
 
-  const openai = new OpenAI({
-    apiKey: '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',
-  });
+  const openai = new OpenAI();
   const embedding = await openai.embeddings.create({input: question, model: 'text-embedding-3-small'});
 
-  const pc = new Pinecone({apiKey: '1e552a25-cb3c-4899-b33b-1c501348f353'});
+  const pc = new Pinecone({apiKey: process.env.PINECONE_API_KEY});
   const result = await pc.index(index_name).namespace(namespace).query({ includeMetadata: true, topK: 10, vector: embedding.data[0].embedding});
 
   const response =  result['matches'].map((match) => {
